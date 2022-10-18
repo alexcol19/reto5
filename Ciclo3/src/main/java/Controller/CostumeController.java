@@ -11,6 +11,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Costume")
+//@CrossOrigin(originis = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+
 public class CostumeController {
     @Autowired
     private CostumeService costumeService;
@@ -23,6 +25,7 @@ public class CostumeController {
     public Costume save(@RequestBody Costume costume){
         return costumeService.save(costume);
     }
+
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Costume update(@RequestBody Costume costume){
